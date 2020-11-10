@@ -1,0 +1,40 @@
+﻿@model CurrencyExchange.Web.ViewModels.Currency.CurrencyDetailedViewModel
+<h2>Index</h2>
+
+<p>Hello from our View Template!</p>
+<div class="grid grid--narrow-xs grid--middle-xs m-hero__meta">
+    <div class="grid__col grid__col--xs-12">
+        <h1 class="m-hero__title"><strong>@Model.Name</strong></h1>
+    </div>
+    <div class="grid__col grid__col--sm grid__col--first-xs grid__col--original-sm">
+        <div class="image  m-hero__meta-flag">
+            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-srcset="https://cdn.tavex.bg/wp-content/uploads/2017/07/03152920/EU-24x16.png 24w, https://cdn.tavex.bg/wp-content/uploads/2017/07/03152920/EU-45x32.png 45w, https://cdn.tavex.bg/wp-content/uploads/2017/07/03152920/EU.png 85w" data-sizes="auto" alt="" class="image__img lazyautosizes lazyloaded" sizes="48px" srcset="https://cdn.tavex.bg/wp-content/uploads/2017/07/03152920/EU-24x16.png 24w, https://cdn.tavex.bg/wp-content/uploads/2017/07/03152920/EU-45x32.png 45w, https://cdn.tavex.bg/wp-content/uploads/2017/07/03152920/EU.png 85w">
+        </div>
+
+        <abbr class="m-hero__meta-abbr">EUR</abbr>
+    </div>
+    <div class="grid__col grid__col--xs">
+        <div class="m-hero__meta-label">куп.</div>
+        <div class="m-hero__meta-value">1.950</div>
+    </div>
+    <div class="grid__col grid__col--xs grid__col--right-xs grid__col--no-offset-sm">
+        <div class="m-hero__meta-label">прод.</div>
+        <div class="m-hero__meta-value">1.958</div>
+    </div>
+</div>
+
+<h1>@Model.Name</h1>
+<h1>@Model.Description</h1>
+<h1>@Model.BuyForPrice</h1>
+<h1>@Model.SellForPrice</h1>
+
+
+@*public string Name { get; set; }
+
+    public string CurrencyCode { get; set; }
+
+    public decimal BuyForPrice { get; set; }
+
+    public decimal SellForPrice { get; set; }
+
+    public string Description { get; set; }*@

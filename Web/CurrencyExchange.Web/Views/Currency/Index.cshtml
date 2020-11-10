@@ -1,0 +1,174 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html>
+<body>
+    <div class="table-hover">
+        <style>
+            .table tbody tr:hover td, .table tbody tr:hover th {
+                background-color: aqua
+            }
+        </style>
+        <table cellpadding="0" cellspacing="0" class="table">
+            <colgroup>
+                <col width="80">
+                <col width="600">
+                <col width="80">
+                <col width="110">
+                <col width="80">
+                <col width="110">
+            </colgroup>
+
+            <thead class="thead-dark">
+                <tr class="header_cells">
+                    <th class="first"></th>
+                    <th class="center">Наименование на валута</th>
+                    <th>Код</th>
+                    <th>Количество</th>
+                    <th>Купува</th>
+                    <th class="last">Продава</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="first">
+                    <td class="center"><img src="~/img/au.png" sizes="353px" /></td>
+                    <td class="align-self-lg-center"><a class="nav-link" asp-area="" asp-controller="Currency" asp-action="Detailed">Австралийски долар</a></td>
+                    <td class="center">AUD</td>
+                    <td class="center">1</td>
+                    <td class="center">1.18084</td>
+                    <td class="last center">0.846855</td>
+                </tr>
+                <tr>
+                    <td class="center"><img src="~/img/ca.png" sizes="353px" /></td>
+                    <td class="first"><a class="nav-link" asp-area="" asp-controller="Currency" asp-action="Detailed">Канадски долар</a></td>
+                    <td class="center">CAD</td>
+                    <td class="right">1</td>
+                    <td class="center">1.25728</td>
+                    <td class="last center">0.795368</td>
+                </tr>
+                <tr>
+                    <td class="center"><img src="~/img/ch.png" sizes="353px" /></td>
+                    <td class="first"><a class="nav-link" asp-area="" asp-controller="Currency" asp-action="Detailed"> Швейцарски франк</a></td>
+                    <td class="center">CHF</td>
+                    <td class="right">1</td>
+                    <td class="center">1.82822</td>
+                    <td class="last center">0.54698</td>
+                </tr>
+                <tr>
+                    <td class="center"><img src="~/img/cyn.png" sizes="353px" /></td>
+                    <td class="first"><a class="nav-link" asp-area="" asp-controller="Currency" asp-action="Detailed">Китайски юан</a></td>
+                    <td class="center">CNY</td>
+                    <td class="right">10</td>
+                    <td class="center">2.50241</td>
+                    <td class="last center">3.99615</td>
+                </tr>
+                <tr>
+                    <td class="center"><img src="~/img/cz.png" sizes="353px" /></td>
+                    <td class="first"><a class="nav-link" asp-area="" asp-controller="Currency" asp-action="Detailed">Чешка крона</a></td>
+                    <td class="center">CZK</td>
+                    <td class="right">100</td>
+                    <td class="center">7.17709</td>
+                    <td class="last center">13.9332</td>
+                </tr>
+                <tr>
+                    <td class="center"><img src="~/img/dkk.png" sizes="353px" /></td>
+                    <td class="first"><a class="nav-link" asp-area="" asp-controller="Currency" asp-action="Detailed">Датска крона</a></td>
+                    <td class="center">DKK</td>
+                    <td class="right">10</td>
+                    <td class="center">2.62647</td>
+                    <td class="last center">3.80739</td>
+                </tr>
+                <tr>
+                    <td class="center"><img src="~/img/dkk.png" sizes="353px" /></td>
+                    <td class="first"><a class="nav-link" asp-area="" asp-controller="Currency" asp-action="Detailed">Британска лира</a></td>
+                    <td class="center">GBP</td>
+                    <td class="right">1</td>
+                    <td class="center">2.16813</td>
+                    <td class="last center">0.461227</td>
+                </tr>
+                <tr>
+                    <td class="center"><img src="~/img/hu.png" sizes="353px" /></td>
+                    <td class="first"><a class="nav-link" asp-area="" asp-controller="Currency" asp-action="Detailed">Унгарски форинт</a></td>
+                    <td class="center">HUF</td>
+                    <td class="right">1000</td>
+                    <td class="center">5.32271</td>
+                    <td class="last center">187.874</td>
+                </tr>
+                <tr>
+                    <td class="center"><img src="~/img/jp.png" sizes="353px" /></td>
+                    <td class="first"><a class="nav-link" asp-area="" asp-controller="Currency" asp-action="Detailed">Японска йена</a></td>
+                    <td class="center">JPY</td>
+                    <td class="right">100</td>
+                    <td class="center">1.59842</td>
+                    <td class="last center">62.5618</td>
+                </tr>
+                <tr>
+                    <td class="center"><img src="~/img/jp.png" sizes="353px" /></td>
+                    <td class="first"><a class="nav-link" asp-area="" asp-controller="Currency" asp-action="Detailed">Норвежка крона</a></td>
+                    <td class="center">NOK</td>
+                    <td class="right">10</td>
+                    <td class="center">1.76296</td>
+                    <td class="last center">5.67228</td>
+                </tr>
+                <tr>
+                    <td class="center"><img src="~/img/pl.png" sizes="353px" /></td>
+                    <td class="first"><a class="nav-link" asp-area="" asp-controller="Currency" asp-action="Detailed">Полска злота</a></td>
+                    <td class="center">PLN</td>
+                    <td class="right">10</td>
+                    <td class="center">4.23138</td>
+                    <td class="last center">2.3633</td>
+                </tr>
+                <tr>
+                    <td class="center"><img src="~/img/ro.png" sizes="353px" /></td>
+                    <td class="first"><a class="nav-link" asp-area="" asp-controller="Currency" asp-action="Detailed">Румъснка лея</a></td>
+                    <td class="center">RON</td>
+                    <td class="right">10</td>
+                    <td class="center">4.01402</td>
+                    <td class="last center">2.49127</td>
+                </tr>
+                <tr>
+                    <td class="center"><img src="~/img/ro.png" sizes="353px" /></td>
+                    <td class="first"><a class="nav-link" asp-area="" asp-controller="Currency" asp-action="Detailed">Руска рубла</a></td>
+                    <td class="center">RUB</td>
+                    <td class="right">100</td>
+                    <td class="center">2.11531</td>
+                    <td class="last center">47.2744</td>
+                </tr>
+                <tr>
+                    <td class="center"><img src="~/img/sek.png" sizes="353px" /></td>
+                    <td class="first"><a class="nav-link" asp-area="" asp-controller="Currency" asp-action="Detailed">Шведска крона</a></td>
+                    <td class="center">SEK</td>
+                    <td class="right">10</td>
+                    <td class="center">1.88696</td>
+                    <td class="last center">5.29953</td>
+                </tr>
+                <tr>
+                    <td class="center"><img src="~/img/tr.png" sizes="353px" /></td>
+                    <td class="first"><a class="nav-link" asp-area="" asp-controller="Currency" asp-action="Detailed">Турска лира</a></td>
+                    <td class="center">TRY</td>
+                    <td class="right">10</td>
+                    <td class="center">1.99697</td>
+                    <td class="last center">5.00759</td>
+                </tr>
+                <tr>
+                    <td class="center"><img src="~/img/usd.png" sizes="353px" /></td>
+                    <td class="first"><a class="nav-link" asp-area="" asp-controller="Currency" asp-action="Detailed">Щатски долар</a></td>
+                    <td class="center">USD</td>
+                    <td class="right">1</td>
+                    <td class="center">1.67194</td>
+                    <td class="last center">0.598108</td>
+                </tr>
+                <tr class="last note">
+                    <td colspan="4" class="first">Забележка: Валутните курсове се определят на основание чл. 12 от Валутния закон и се използват за целите, предвидени по закон.</td>
+                    <td class="last">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+
