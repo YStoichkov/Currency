@@ -1,7 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
-
-namespace CurrencyExchange.Data.Migrations
+﻿namespace CurrencyExchange.Data.Migrations
 {
+    using Microsoft.EntityFrameworkCore.Migrations;
+
     public partial class AddPropertiesToSomeModels : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
