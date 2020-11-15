@@ -2,7 +2,7 @@
 {
     using CurrencyExchange.Data.Common.Models;
 
-    public class Gold : BaseDeletableModel<string>
+    public class Gold : BaseDeletableModel<int>
     {
         public string ImageUrl { get; set; }
 
@@ -12,6 +12,6 @@
 
         public decimal SellForPrice { get; set; }
 
-        public int Quantity { get; set; }
+        public int AvailableQuantity { get; set; }
     }
 }

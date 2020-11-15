@@ -1,33 +1,34 @@
 ﻿namespace CurrencyExchange.Web.Controllers
 {
+    using System.Linq;
+
     using CurrencyExchange.Data;
+    using CurrencyExchange.Services.Data;
     using CurrencyExchange.Web.ViewModels.Currency;
     using Microsoft.AspNetCore.Mvc;
 
-    public class CurrencyController : Controller
+    public class CurrencyController : BaseController
     {
-        private readonly ApplicationDbContext dbContext;
+        private readonly ICurrencyService currencyService;
 
-        public CurrencyController(ApplicationDbContext dbContext)
+        public CurrencyController(ICurrencyService currencyService)
         {
-            this.dbContext = dbContext;
+            this.currencyService = currencyService;
         }
 
         public IActionResult Index()
         {
-            return this.View();
+            var viewModel = new IndexViewModel();
+            var currencies = this.currencyService.GetAll<IndexCurrencyViewModel>();
+            viewModel.Currencies = currencies;
+            return this.View(viewModel);
         }
 
-        public IActionResult Detailed()
+        public IActionResult Detailed(string name)
         {
-            var model = new CurrencyDetailedViewModel
-            {
-                Name = "Euro",
-                Description = "The Currency for EU",
-                BuyForPrice = 1.953M,
-                SellForPrice = 1.955M,
-            };
-            return this.View(model);
+            var viewModel =
+                this.currencyService.GetByName<IndexCurrencyViewModel>(name);
+            return this.View(viewModel);
         }
     }
 }

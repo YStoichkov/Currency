@@ -1,40 +1,65 @@
-﻿@model CurrencyExchange.Web.ViewModels.Currency.CurrencyDetailedViewModel
-<h2>Index</h2>
+﻿@model CurrencyExchange.Web.ViewModels.Currency.IndexCurrencyViewModel;
 
-<p>Hello from our View Template!</p>
 <div class="grid grid--narrow-xs grid--middle-xs m-hero__meta">
     <div class="grid__col grid__col--xs-12">
-        <h1 class="m-hero__title"><strong>Currency name @Model.Name</strong></h1>
-    </div>
-    <div class="grid__col grid__col--sm grid__col--first-xs grid__col--original-sm">
-        <div class="image  m-hero__meta-flag">
-            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-srcset="https://cdn.tavex.bg/wp-content/uploads/2017/07/03152920/EU-24x16.png 24w, https://cdn.tavex.bg/wp-content/uploads/2017/07/03152920/EU-45x32.png 45w, https://cdn.tavex.bg/wp-content/uploads/2017/07/03152920/EU.png 85w" data-sizes="auto" alt="" class="image__img lazyautosizes lazyloaded" sizes="48px" srcset="https://cdn.tavex.bg/wp-content/uploads/2017/07/03152920/EU-24x16.png 24w, https://cdn.tavex.bg/wp-content/uploads/2017/07/03152920/EU-45x32.png 45w, https://cdn.tavex.bg/wp-content/uploads/2017/07/03152920/EU.png 85w">
-        </div>
+        <a asp-controller="Currency" asp-action="Index">< Всички валути</a>
+        <div class="grid grid--narrow-xs grid--middle-xs m-hero__meta">
+            <div class="grid__col grid__col--xs-12">
+                <h1 class="m-hero__title">@Model.CurrencyName</h1>
+            </div>
+            <div class="grid__col grid__col--sm grid__col--first-xs grid__col--original-sm">
+                <div class="image  m-hero__meta-flag">
+                    <img src="@Model.CurrencyImage">
+                </div>
 
-        <abbr class="m-hero__meta-abbr">EUR</abbr>
-    </div>
-    <div class="grid__col grid__col--xs">
-        <div class="m-hero__meta-label">куп.</div>
-        <div class="m-hero__meta-value">1.950</div>
-    </div>
-    <div class="grid__col grid__col--xs grid__col--right-xs grid__col--no-offset-sm">
-        <div class="m-hero__meta-label">прод.</div>
-        <div class="m-hero__meta-value">1.958</div>
+                <abbr class="m-hero__meta-abbr">@Model.CurrencyCode</abbr>
+            </div>
+            <div class="grid__col grid__col--xs">
+                <div class="m-hero__meta-label">Kуп.</div>
+                <div class="m-hero__meta-value">@Model.BuyForPrice</div>
+            </div>
+            <div class="grid__col grid__col--xs grid__col--right-xs grid__col--no-offset-sm">
+                <div class="m-hero__meta-label">прод.</div>
+                <div class="m-hero__meta-value">@Model.SellForPrice</div>
+            </div>
+        </div>
     </div>
 </div>
 
-<h1>@Model.Name</h1>
-<h1>@Model.Description</h1>
-<h1>@Model.BuyForPrice</h1>
-<h1>@Model.SellForPrice</h1>
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#полезно">Полезно</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#валутнаТаблица">Валутна таблица</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#вОбращение">В обращение</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#любопитно">Любопитно</a>
+    </li>
+</ul>
+<div id="myTabContent" class="tab-content">
+    <div class="tab-pane fade" id="полезно">
+        <p>Home text</p>
+    </div>
+    <div class="tab-pane fade" id="валутнаТаблица">
+        <p>Profile text</p>
+    </div>
+    <div class="tab-pane fade" id="вОбращение">
+        <p>В обращение текст</p>
+    </div>
+    <div class="tab-pane fade" id="любопитно">
+        <p>Любопитно текст</p>
+    </div>
+</div>
+
+
 
 
 @*public string Name { get; set; }
-
     public string CurrencyCode { get; set; }
-
     public decimal BuyForPrice { get; set; }
-
     public decimal SellForPrice { get; set; }
-
     public string Description { get; set; }*@

@@ -1,119 +1,55 @@
-﻿
-
+﻿@model CurrencyExchange.Web.ViewModels.Contact.ContactViewModel
+@{
+    this.ViewData["Title"] = "Contact Us";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<button type="button" class="btn btn-primary btn-lg btn-block">София бул."Ал.Стамболийски" 25 , тел. + 02 123 567 89 email: wizzard@currency.com </button>
 <!--Section: Contact v.2-->
 <section class="mb-4">
-    <img src="https://www.recruitnorthhighlands.com/wp-content/uploads/2019/10/contact-us-1908762_1280.png"class="img-fluid" alt="Responsive image">
+    <img src="https://www.recruitnorthhighlands.com/wp-content/uploads/2019/10/contact-us-1908762_1280.png" class="card-img-top" alt="Responsive image" width="250" height="150">
     <!--Section heading-->
-    <h2 class="h1-responsive font-weight-bold text-center my-4">Контакти</h2>
     <!--Section description-->
-    <p class="text-center w-responsive mx-auto mb-5">
-        <strong>За всякакви въпроси свързани с нашата платформа , курсове и организация можете да зададете въпрос и нашият екип ще се постарае да ви отговори в най-кратки срокове.</strong>
-    </p>
-
-    <div class="row">
-
-        <!--Grid column-->
-        <div class="col-md-9 mb-md-0 mb-5">
-            <form id="contact-form" name="contact-form" action="mail.php" method="POST">
-
-                <!--Grid row-->
-                <div class="row">
-
-                    <!--Grid column-->
-                    <div class="col-md-6">
-                        <div class="md-form mb-0">
-                            <input type="text" id="name" name="name" class="form-control">
-                            <label for="name" class=""><strong>Име</strong></label>
-                        </div>
-                    </div>
-                    <!--Grid column-->
-                    <!--Grid column-->
-                    <div class="col-md-6">
-                        <div class="md-form mb-0">
-                            <input type="text" id="email" name="email" class="form-control">
-                            <label for="email" class=""><strong>Еmail</strong></label>
-                        </div>
-                    </div>
-                    <!--Grid column-->
-
-                </div>
-                <!--Grid row-->
-                <!--Grid row-->
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="md-form mb-0">
-                            <input type="text" id="subject" name="subject" class="form-control">
-                            <label for="subject" class=""><strong>Тема</strong></label>
-                        </div>
-                    </div>
-                </div>
-                <!--Grid row-->
-                <!--Grid row-->
-                <div class="row">
-
-                    <!--Grid column-->
-                    <div class="col-md-12">
-
-                        <div class="md-form">
-                            <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
-                            <label for="message"><strong>Съобщение</strong></label>
-                        </div>
-
-                    </div>
-                </div>
-                <!--Grid row-->
-
-            </form>
-            <form asp-controller="Contact"
-                  asp-action="Success" method="post">
-                <br />
-                <button type="submit" class="btn btn-primary">Send</button>
-            </form>
-            @*<div class="text-center text-md-left">
-                <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a>
-            </div>
-            <div class="status"></div>*@
+    <form method="post" class="col-md-6 offset-3" id="form">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="Name"><strong>Име</strong></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
         </div>
-        <!--Grid column-->
-        <!--Grid column-->        
-        <div class="mapouter">
-            <div class="gmap_canvas"><iframe width="500" height="600" id="gmap_canvas" src="https://maps.google.com/maps?q=%D0%A1%D0%BE%D1%84%D0%B8%D1%8F%20%2C%20%D0%B1%D1%83%D0%BB.%20%22%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%8A%D1%80%20%D0%A1%D1%82%D0%B0%D0%BC%D0%B1%D0%BE%D0%BB%D0%B8%D0%B9%D1%81%D0%BA%D0%B8%22%2025&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.whatismyip-address.com/divi-discount/"></a></div>
-            <style>
-                .mapouter {
-                    position: relative;
-                    text-align: right;
-                    height: 500px;
-                    width: 600px;
-                }
-
-                .gmap_canvas {
-                    overflow: hidden;
-                    background: none !important;
-                    height: 500px;
-                    width: 600px;
-                }
-            </style>
+        <div class="form-group">
+            <label asp-for="Email"><strong>Email</strong></label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
         </div>
-        <div class="col-md-3 text-center">
-            <ul class="list-unstyled mb-0">
-                <li>
-                    <i class="fas fa-map-marker-alt fa-2x"></i>
-                    <p><strong>София , бул. "Александър Стамболийски" 25</strong></p>
-                </li>
-
-                <li>
-                    <i class="fas fa-phone mt-4 fa-2x"></i>
-                    <p><strong>+ 02 123 567 89</strong></p>
-                </li>
-
-                <li>
-                    <i class="fas fa-envelope mt-4 fa-2x"></i>
-                    <p><strong>wizzard@currency.com</</strong><p>
-                </li>
-            </ul>
+        <div class="form-group">
+            <label asp-for="Subject"><strong>Тема</strong></label>
+            <input asp-for="Subject" class="form-control" />
+            <span asp-validation-for="Subject" class="text-danger"></span>
         </div>
-        <!--Grid column-->
+        <div class="form-group">
+            <label asp-for="Message"><strong>Съобщение</strong></label>
+            <textarea asp-for="Message" class="form-control" rows="4"></textarea>
+            <span asp-validation-for="Message" class="text-danger"></span>
+        </div>
+        <input type="submit" class="btn btn-primary" />
+    </form>
+
+    <div class="col-md-6 offset-3" id="map">
+        <div class="gmap_canvas"><iframe width="400" height="350" id="gmap_canvas" src="https://maps.google.com/maps?q=%D0%A1%D0%BE%D1%84%D0%B8%D1%8F%20%2C%20%D0%B1%D1%83%D0%BB.%20%22%D0%90%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%8A%D1%80%20%D0%A1%D1%82%D0%B0%D0%BC%D0%B1%D0%BE%D0%BB%D0%B8%D0%B9%D1%81%D0%BA%D0%B8%22%2025&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.whatismyip-address.com/divi-discount/"></a></div>
+        <style>
+            .mapouter {
+                position: relative;
+                text-align: right;
+                height: 500px;
+                width: 600px;
+            }
+
+            .gmap_canvas {
+                overflow: hidden;
+                background: none !important;
+                height: 500px;
+                width: 600px;
+            }
+        </style>
     </div>
-
 </section>
-<!--Section: Contact v.2-->

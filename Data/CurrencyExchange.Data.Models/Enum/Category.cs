@@ -4,5 +4,7 @@
     {
         Dealer = 0,
         Consultant = 1,
+        HR = 2,
+        CallCenterAssistant = 3,
     }
 }

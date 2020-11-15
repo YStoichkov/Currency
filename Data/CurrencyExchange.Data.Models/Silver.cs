@@ -12,6 +12,6 @@
 
         public decimal SellForPrice { get; set; }
 
-        public int Quantity { get; set; }
+        public int AvailableQuantity { get; set; }
     }
 }

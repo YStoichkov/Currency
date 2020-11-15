@@ -20,7 +20,7 @@
 
         public IActionResult Currency()
         {
-            return this.View("~/Views/Currency/Currency.cshtml", new CurrencyViewModel());
+            return this.View("~/Views/Currency/Currency.cshtml", new IndexCurrencyViewModel());
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
