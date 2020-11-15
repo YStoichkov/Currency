@@ -27,6 +27,8 @@
                           {
                               new RolesSeeder(),
                               new SettingsSeeder(),
+                              new CurrencySeeder(),
+                              new OfficesSeeder(),
                           };
 
             foreach (var seeder in seeders)

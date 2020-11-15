@@ -26,6 +26,24 @@
 
         public DbSet<Setting> Settings { get; set; }
 
+        public DbSet<ContactForm> ContactForms { get; set; }
+
+        public DbSet<Currency> Currencies { get; set; }
+
+        public DbSet<Gold> Golds { get; set; }
+
+        public DbSet<Job> Jobs { get; set; }
+
+        public DbSet<Office> Offices { get; set; }
+
+        public DbSet<Order> Orders { get; set; }
+
+        public DbSet<OrderDetail> OrderDetails { get; set; }
+
+        public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
+
+        public DbSet<Silver> Silvers { get; set; }
+
         public override int SaveChanges() => this.SaveChanges(true);
 
         public override int SaveChanges(bool acceptAllChangesOnSuccess)
