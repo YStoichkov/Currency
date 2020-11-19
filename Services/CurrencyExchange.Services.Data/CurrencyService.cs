@@ -7,7 +7,7 @@
     using CurrencyExchange.Data.Models;
     using CurrencyExchange.Services.Mapping;
 
-    public class CurrencyService : ICurrencyService
+    public class CurrencyService : ICurrenciesService
     {
         private readonly IDeletableEntityRepository<Currency> currencyRepository;
 

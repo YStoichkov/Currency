@@ -9,9 +9,9 @@
 
     public class CurrencyController : BaseController
     {
-        private readonly ICurrencyService currencyService;
+        private readonly ICurrenciesService currencyService;
 
-        public CurrencyController(ICurrencyService currencyService)
+        public CurrencyController(ICurrenciesService currencyService)
         {
             this.currencyService = currencyService;
         }
