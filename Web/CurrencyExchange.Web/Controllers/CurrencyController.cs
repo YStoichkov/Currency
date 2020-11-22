@@ -1,10 +1,9 @@
 ﻿namespace CurrencyExchange.Web.Controllers
 {
-    using System.Linq;
-
-    using CurrencyExchange.Data;
+    using CurrencyExchange.Data.Models;
     using CurrencyExchange.Services.Data;
     using CurrencyExchange.Web.ViewModels.Currency;
+    using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
 
     public class CurrencyController : BaseController
