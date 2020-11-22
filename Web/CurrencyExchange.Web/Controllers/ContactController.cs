@@ -1,6 +1,5 @@
 ﻿namespace CurrencyExchange.Web.Controllers
 {
-    using System.Collections.Generic;
     using System.Threading.Tasks;
 
     using CurrencyExchange.Services.Messaging;
@@ -31,7 +30,7 @@
 
             await this.emailSender.SendEmailAsync(viewModel.Email, viewModel.Name, "ystoichkov@gmail.com", viewModel.Subject, viewModel.Message);
 
-            return this.RedirectToAction("Success");
+            return this.Redirect("Success");
         }
 
         public IActionResult Success()

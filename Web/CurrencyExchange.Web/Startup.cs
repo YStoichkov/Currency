@@ -12,11 +12,9 @@
     using CurrencyExchange.Services.Mapping;
     using CurrencyExchange.Services.Messaging;
     using CurrencyExchange.Web.ViewModels;
-
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Http;
-    using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;

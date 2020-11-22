@@ -1,14 +1,14 @@
 ﻿@model CurrencyExchange.Web.ViewModels.Contact.ContactViewModel
+@inject Microsoft.Extensions.Configuration.IConfiguration Configuration
 @{
     this.ViewData["Title"] = "Contact Us";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <button type="button" class="btn btn-primary btn-lg btn-block">София бул."Ал.Стамболийски" 25 , тел. + 02 123 567 89 email: wizzard@currency.com </button>
-<!--Section: Contact v.2-->
+
 <section class="mb-4">
-    <img src="https://www.recruitnorthhighlands.com/wp-content/uploads/2019/10/contact-us-1908762_1280.png" class="card-img-top" alt="Responsive image" width="250" height="150">
-    <!--Section heading-->
-    <!--Section description-->
+    <img src="https://www.nexoo.co.uk/public/wp-content/uploads/sites/2/2017/03/contact-img-1.png" class="card-img-top" alt="Responsive image" width="150" height="250">
+
     <form method="post" class="col-md-6 offset-3" id="form">
         <div asp-validation-summary="All" class="text-danger"></div>
         <div class="form-group">
@@ -31,7 +31,8 @@
             <textarea asp-for="Message" class="form-control" rows="4"></textarea>
             <span asp-validation-for="Message" class="text-danger"></span>
         </div>
-        <input type="submit" class="btn btn-primary" />
+        <input type="hidden" id="RecaptchaValue" name="RecaptchaValue" />
+        <input type="submit" class="btn btn-primary" value="Изпрати" asp-area="" asp-controller="Contact" asp-action="Success" />
     </form>
 
     <div class="col-md-6 offset-3" id="map">
@@ -53,3 +54,15 @@
         </style>
     </div>
 </section>
+
+@section Scripts
+{
+    <script src="https://www.google.com/recaptcha/api.js?render=@this.Configuration["GoogleReCaptcha:Key"]"></script>
+    <script>
+        grecaptcha.ready(function () {
+            grecaptcha.execute('@this.Configuration["6Lef6egZAAAAALtj4kBz9AHuiBEfAc5ld9F496BI"]', { action: 'contact_form' }).then(function (token) {
+                document.getElementById("RecaptchaValue").value = token;
+            });
+        });
+    </script>
+}
